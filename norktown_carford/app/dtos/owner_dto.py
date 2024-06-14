@@ -1,3 +1,5 @@
+from ..dtos.car_dto import CarDTO
+
 class OwnerDTO:
     def __init__(self, owner):
         self.id = owner.id
