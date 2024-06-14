@@ -1,3 +1,4 @@
+
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required
 from ..controllers.owner_controller import create_owner, get_owner, update_owner, delete_owner
@@ -32,6 +33,5 @@ def update_owner_route(owner_id):
 @owner_bp.route('/<int:owner_id>', methods=['DELETE'])
 @jwt_required()
 def delete_owner_route(owner_id):
-    if delete_owner(owner_id):
-        return jsonify({'message': 'Owner deleted'}), 200
-    return jsonify({'error': 'Owner not found'}), 404
+    response, status = delete_owner(owner_id)
+    return response, status
