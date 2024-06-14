@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify
-from ..controllers.owner_controller.py import create_owner
+from ..controllers.owner_controller import create_owner
 
 owner_bp = Blueprint('owners', __name__)
 
