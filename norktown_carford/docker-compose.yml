@@ -24,5 +24,18 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
+  test:
+    build: .
+    command: sh -c "/wait-for-it.sh db 5432 pytest --cov=app app/tests"
+    container_name: norktown_test
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: norktown_db
+
 volumes:
   postgres_data:

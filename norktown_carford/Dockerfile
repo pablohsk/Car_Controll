@@ -12,6 +12,8 @@ COPY requirements.yml requirements.yml
 # Instale as dependências
 RUN pip install --no-cache-dir -r requirements.yml
 
+RUN pip install pytest pytest-cov
+
 # Copie o conteúdo da aplicação para o diretório de trabalho
 COPY . .
 

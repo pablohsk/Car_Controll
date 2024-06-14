@@ -5,3 +5,5 @@ Flask-JWT-Extended==4.3.1
 Werkzeug==2.1.1
 SQLAlchemy==1.4.39
 psycopg2-binary
+pytest==6.2.4
+pytest-cov==2.12.1
