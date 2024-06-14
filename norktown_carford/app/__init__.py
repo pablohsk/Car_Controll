@@ -18,9 +18,10 @@ def create_app():
 
     from .views.car_view import car_bp
     from .views.owner_view import owner_bp
-    from .views.user_view import user_bp  # Adicione esta linha
+    from .views.user_view import user_bp
+
     app.register_blueprint(car_bp, url_prefix='/cars')
     app.register_blueprint(owner_bp, url_prefix='/owners')
-    app.register_blueprint(user_bp, url_prefix='/users')  # Adicione esta linha
+    app.register_blueprint(user_bp, url_prefix='/users')
 
     return app
